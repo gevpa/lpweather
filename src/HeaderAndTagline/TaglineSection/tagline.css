@@ -3,20 +3,44 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
   max-height: 500px;
   width: 100vw;
   background-color: #f6f6ff;
-  padding: 0 50px;
+  padding: 50 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: center;
 }
+
+@media (max-width: 768px) {
+  .tagText {
+    padding: 30px 10px;
+    min-height: 150px;
+  }
+}
+
 h3 {
   text-align: center;
   font-size: 60px;
   color: #373656;
 }
 
+@media (max-width: 768px) {
+  h3 {
+    padding: 0 50px;
+    font-size: 40px;
+  }
+}
+
 h5 {
   text-align: center;
   font-size: 20px;
   color: #333e49;
+}
+
+@media (max-width: 768px) {
+  h5 {
+    padding: 0 20px;
+    font-size: 20px;
+  }
 }
