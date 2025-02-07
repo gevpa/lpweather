@@ -1,11 +1,18 @@
 .searchBar {
+  position: relative;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  max-height: 400px;
-  width: 100vw;
-  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
   overflow: hidden;
-  text-align: center;
+}
+
+.backgroundImage {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  display: block;
 }
 
 .searchContainer {
@@ -19,6 +26,15 @@
   padding: 10px;
   border-radius: 25px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 600px;
+}
+
+.locationIcon {
+  margin-right: 10px;
+  color: #007bff;
+  font-size: 20px;
+  flex-shrink: 0;
 }
 
 .searchInput {
@@ -27,13 +43,11 @@
   background: transparent;
   padding: 10px;
   font-size: 16px;
-  width: 300px;
+  width: 100%;
+  white-space: nowrap;
+  flex-shrink: 1;
 }
-.locationIcon {
-  margin-right: 10px;
-  color: #007bff; /* Χρώμα εικονιδίου */
-  font-size: 20px; /* Μέγεθος εικονιδίου */
-}
+
 .searchButton {
   border: none;
   background: #007bff;
@@ -43,8 +57,59 @@
   cursor: pointer;
   font-size: 16px;
   margin-left: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .searchButton:hover {
   background: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .backgroundImage {
+    max-height: 400px;
+  }
+
+  .searchContainer {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 8px;
+    width: 80%;
+  }
+
+  .locationIcon {
+    font-size: 16px;
+  }
+
+  .searchInput {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .searchButton {
+    font-size: 14px;
+    padding: 8px 16px;
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .backgroundImage {
+    max-height: 400px;
+  }
+
+  .locationIcon {
+    font-size: 14px;
+  }
+
+  .searchInput {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .searchButton {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
 }
