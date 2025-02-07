@@ -1,0 +1,50 @@
+.searchBar {
+  display: flex;
+  flex-direction: column;
+  max-height: 400px;
+  width: 100vw;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: center;
+}
+
+.searchContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px;
+  font-size: 16px;
+  width: 300px;
+}
+.locationIcon {
+  margin-right: 10px;
+  color: #007bff; /* Χρώμα εικονιδίου */
+  font-size: 20px; /* Μέγεθος εικονιδίου */
+}
+.searchButton {
+  border: none;
+  background: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.searchButton:hover {
+  background: #0056b3;
+}
