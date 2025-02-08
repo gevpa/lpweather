@@ -1,0 +1,13 @@
+:root {
+  /*colors*/
+  --primary-color: #373656;
+
+  /*mobile width breakpoint*/
+  --mobile-width: 768px;
+}
+
+/* Export variables */
+:export {
+  primaryColor: var(--primary-color);
+  mobileWidth: var(--mobile-width);
+}
