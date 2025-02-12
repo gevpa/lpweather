@@ -7,7 +7,7 @@
   width: 100%;
   position: fixed;
   height: 60px;
-  box-shadow: 0 4px 6px lightgray;
+  box-shadow: 0 4px 6px #e4e2e2;
 }
 
 /* .logo {
