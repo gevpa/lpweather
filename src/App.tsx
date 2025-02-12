@@ -1,6 +1,6 @@
 import "./app.css";
-import HeaderAndTagline from "./HeaderAndTagline/HeaderAndTagline";
-import SearchBar from "./pages/SearchBar/SearchBar";
+import HeaderAndTagline from "./components/HeaderAndTagline/HeaderAndTagline";
+import SearchBar from "./components/SearchBar/SearchBar";
 
 function App() {
   return (
