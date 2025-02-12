@@ -22,17 +22,24 @@
   transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
+  gap: 20px;
+  width: 90%;
+  max-width: 700px;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
   background: rgba(255, 255, 255, 0.8);
   padding: 10px;
   border-radius: 25px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 600px;
+  width: 100%;
 }
 
 .locationIcon {
   margin-right: 10px;
-  color: #007bff;
+  color: #373656;
   font-size: 20px;
   flex-shrink: 0;
 }
@@ -50,15 +57,15 @@
 
 .searchButton {
   border: none;
-  background: #007bff;
+  background: #373656;
   color: white;
   padding: 10px 20px;
   border-radius: 20px;
   cursor: pointer;
   font-size: 16px;
-  margin-left: 10px;
   white-space: nowrap;
   flex-shrink: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .searchButton:hover {
@@ -67,14 +74,19 @@
 
 @media (max-width: 768px) {
   .backgroundImage {
-    max-height: 400px;
+    height: 200px;
   }
 
   .searchContainer {
     flex-direction: column;
     align-items: stretch;
-    padding: 8px;
-    width: 80%;
+    gap: 10px;
+    width: 60%;
+    margin: 20 20px;
+  }
+
+  .inputContainer {
+    width: 100%;
   }
 
   .locationIcon {
@@ -89,7 +101,6 @@
   .searchButton {
     font-size: 14px;
     padding: 8px 16px;
-    margin-left: 0;
     width: 100%;
   }
 }
