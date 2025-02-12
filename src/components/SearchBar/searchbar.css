@@ -32,7 +32,7 @@
   align-items: center;
   background: rgba(255, 255, 255, 0.8);
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0 4px 6px #636d77;
   width: 100%;
   border: 1px solid #373656;
@@ -63,7 +63,7 @@
   background: #373656;
   color: white;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   font-size: 16px;
   white-space: nowrap;
@@ -82,14 +82,15 @@
 
   .searchContainer {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     gap: 10px;
-    width: 60%;
+    width: 80%;
     margin: 20 20px;
   }
 
   .inputContainer {
-    width: 100%;
+    width: 300px;
+    height: 30px;
   }
 
   .locationIcon {
@@ -104,13 +105,29 @@
   .searchButton {
     font-size: 14px;
     padding: 8px 16px;
-    width: 100%;
+    width: 320px;
+    height: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
 
 @media (max-width: 480px) {
+  .searchContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 80%;
+    margin: 20 20px;
+  }
   .backgroundImage {
     max-height: 400px;
+  }
+  .inputContainer {
+    width: 300px;
+    height: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 
   .locationIcon {
@@ -125,5 +142,9 @@
   .searchButton {
     font-size: 12px;
     padding: 6px 12px;
+    width: 320px;
+    height: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
