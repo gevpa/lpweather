@@ -32,9 +32,10 @@
   align-items: center;
   background: rgba(255, 255, 255, 0.8);
   padding: 10px;
-  border-radius: 25px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  box-shadow: 0 4px 6px #636d77;
   width: 100%;
+  border: 1px solid #373656;
 }
 
 .locationIcon {
@@ -60,7 +61,7 @@
   background: #373656;
   color: white;
   padding: 10px 20px;
-  border-radius: 20px;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
   white-space: nowrap;
