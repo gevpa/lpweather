@@ -71,7 +71,7 @@
 }
 
 .searchButton:hover {
-  background: #353383;
+  background: var(--primary-hover-color);
 }
 
 @media (max-width: 768px) {
@@ -109,6 +109,10 @@
     margin-left: 20px;
     margin-right: 20px;
   }
+
+  .searchButton:active {
+    background: var(--primary-onClick-color);
+  }
 }
 
 @media (max-width: 480px) {
@@ -145,5 +149,9 @@
     height: 50px;
     margin-left: 20px;
     margin-right: 20px;
+  }
+
+  .searchButton:active {
+    background: var(--primary-onClick-color);
   }
 }

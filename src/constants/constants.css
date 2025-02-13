@@ -1,6 +1,8 @@
 :root {
   /*colors*/
   --primary-color: #373656;
+  --primary-hover-color: #353383;
+  --primary-onClick-color: #353383;
 
   /*mobile width breakpoint*/
   --mobile-width: 768px;
@@ -9,5 +11,7 @@
 /* Export variables */
 :export {
   primaryColor: var(--primary-color);
+  primary-hover-color: var(--primary-hover-color);
+  primary-onClick-color: var(--primary-onClick-color);
   mobileWidth: var(--mobile-width);
 }
