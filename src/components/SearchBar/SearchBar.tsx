@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { FaLocationArrow } from "react-icons/fa";
 import Map from "../../assets/Images/Map.png";
+import LocationLogo from "../../assets/Images/LocationLogo.svg";
 import "./searchbar.css";
 function SearchBar() {
   const [query, setQuery] = useState("");
@@ -18,7 +18,7 @@ function SearchBar() {
       <img src={Map} alt="lpweather-Map" className="backgroundImage" />
       <div className="searchContainer">
         <div className="inputContainer">
-          <FaLocationArrow className="locationIcon" />
+          <img src={LocationLogo} alt="lpweather-LocationLogo" />
           <input
             type="text"
             value={query}

@@ -35,12 +35,11 @@
   border-radius: 10px;
   box-shadow: 0 4px 6px #636d77;
   width: 100%;
-  border: 1px solid #373656;
+  border: 1px solid var(--primary-color);
 }
 
 .locationIcon {
   margin-right: 10px;
-  color: #373656;
   font-size: 20px;
   flex-shrink: 0;
 }
@@ -60,7 +59,7 @@
   border: none;
   width: 130px;
   height: 60px;
-  background: #373656;
+  background: var(--primary-color);
   color: white;
   padding: 10px 20px;
   border-radius: 10px;
@@ -72,7 +71,7 @@
 }
 
 .searchButton:hover {
-  background: #0056b3;
+  background: #353383;
 }
 
 @media (max-width: 768px) {
