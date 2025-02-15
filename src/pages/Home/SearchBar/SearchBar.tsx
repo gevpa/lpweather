@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Map from "../../assets/Images/Map.png";
-import LocationLogo from "../../assets/Images/LocationLogo.svg";
+import Map from "../../../assets/Images/Map.png";
+import LocationLogo from "../../../assets/Images/LocationLogo.svg";
 import "./searchbar.css";
 function SearchBar() {
   const [query, setQuery] = useState("");

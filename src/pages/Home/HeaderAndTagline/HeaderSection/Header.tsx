@@ -1,4 +1,4 @@
-import weatherLogo from "../../../assets/images/weatherLogo.svg";
+import weatherLogo from "../../../../assets/Images/weatherLogo.svg";
 import "./header.css";
 
 function Header() {

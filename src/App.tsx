@@ -1,15 +1,14 @@
 import "./app.css";
-import CardsWrapper from "./components/CardsWrapper/CardsWrapper";
-import Footer from "./components/Footer/Footer";
-import HeaderAndTagline from "./components/HeaderAndTagline/HeaderAndTagline";
-import SearchBar from "./components/SearchBar/SearchBar";
+import CardsWrapper from "./pages/Home/CardsWrapper/CardsWrapper";
+import Footer from "./pages/Home/Footer/Footer";
+import HeaderAndTagline from "./pages/Home/HeaderAndTagline/HeaderAndTagline";
+import SearchBar from "./pages/Home/SearchBar/SearchBar";
 
 function App() {
   return (
     <>
       <div className="app-wrapper">
         <HeaderAndTagline />
-        {/* TODO: Later we will create here a section for weather search, one for weather cards and finally one for the footer. */}
         <SearchBar />
         <CardsWrapper />
         <Footer />
