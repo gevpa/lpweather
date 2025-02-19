@@ -6,8 +6,8 @@
   align-items: center;
   width: 380px;
   height: 250px;
-  padding: 10px;
-  box-sizing: border-box;
+  padding: 10px; /* why padding 10? Its better padding: 40px 26px 40px 40px*/
+  /* box-sizing: border-box; */
   border-radius: 8px;
   font-family: Lato-Regular, sans-serif;
   background-color: #f9f9f9;
@@ -29,12 +29,12 @@
   color: var(--primary-color);
   font-size: 40px;
   font-weight: bolder;
-  margin-left: 40px;
+  margin-left: 40px; /* Remove this margin if you set the padding above */
 }
 
 .weatherIcon {
-  color: var(--primary-color);
-  font-size: 24px;
+  /* color: var(--primary-color); */
+  /* font-size: 24px; */
   width: 64px;
   height: 64px;
 }
@@ -42,5 +42,8 @@
 .city {
   color: var(--primary-color);
   font-size: 20px;
-  margin-left: 40px;
+  margin-left: 40px; /* Remove this margin if you set the padding above */
 }
+
+/*The card also has in left side the weather (eg Sunny, Cloudy etc) and lat, lon. Use flexbox with gap to set
+the desired gaps between the elements.*/
