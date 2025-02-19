@@ -1,4 +1,5 @@
 import WeatherCard from "../../../components/WeatherCard/WeatherCard";
+import "../CardsWrapper/CardsWrapper.css";
 
 //TODO: Use mock data to render cards in a grid layout
 const cardMockData = [

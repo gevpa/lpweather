@@ -1,20 +1,18 @@
 import WeatherIcon from "../../assets/WeatherIcons/ClearSkyDay.svg";
+import "../WeatherCard/weatherCard.css";
+import "../../constants/constants.css";
 
 function WeatherCard({ data }: { data: any }) {
   return (
-    <div
-      style={{
-        border: "1px solid black",
-        padding: "10px",
-        borderRadius: "5px",
-      }}
-    >
-      {/* //TODO: Change these */}
-      <div>
-        {data.city}, {data.country}
+    <div className="weatherCard">
+      <div className="leftContent">
+        <div className="temperature">{data.temperature}</div>
+        <div className="city">
+          {data.city}, {data.country}
+        </div>
       </div>
-      <div>{data.temperature}</div>
-      <div>
+
+      <div className="weatherIcon">
         {data.weather === "Sunny" ? <img src={WeatherIcon}></img> : <span />}
       </div>
     </div>
