@@ -2,15 +2,30 @@ import React, { useState } from "react";
 import Map from "../../../assets/Images/Map.png";
 import LocationLogo from "../../../assets/Images/LocationLogo.svg";
 import "./searchbar.css";
-function SearchBar() {
+function SearchBar({
+  handleFoundCity,
+}: {
+  handleFoundCity: (city: string) => void;
+}) {
   const [query, setQuery] = useState("");
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);
   };
 
-  const handleSearch = () => {
-    console.log("Searching for:", query);
+  console.log("query", query);
+
+  const handleSearch = async () => {
+    try {
+      const response = await fetch(
+        `http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=2b9db91f8d8493f3374df65ee36118ce`,
+      );
+      const data = response.json();
+      // handleFoundCity();
+      console.log("data", data);
+    } catch (error) {
+      console.log("error", error);
+    }
   };
 
   return (
