@@ -7,6 +7,9 @@ function WeatherCard({ data }: { data: any }) {
     <div className="weatherCard">
       <div className="leftContent">
         <div className="temperature">{data.temperature}</div>
+        <div className="weatherState">
+          {data.weather === "Sunny" ? data.weather : <span />}
+        </div>
         <div className="city">
           {data.city}, {data.country}
         </div>

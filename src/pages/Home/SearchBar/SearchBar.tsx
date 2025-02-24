@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Map from "../../../assets/Images/Map.png";
 import LocationLogo from "../../../assets/Images/LocationLogo.svg";
 import "./searchbar.css";
+
 function SearchBar({
   handleFoundCity,
 }: {
@@ -28,6 +29,12 @@ function SearchBar({
     }
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      handleSearch();
+    }
+  };
+
   return (
     <div className="searchBar">
       <img src={Map} alt="lpweather-Map" className="backgroundImage" />
@@ -38,6 +45,7 @@ function SearchBar({
             type="text"
             value={query}
             onChange={handleInputChange}
+            onKeyDown={handleKeyDown}
             placeholder="Example: New York, United States"
             className="searchInput"
           />
