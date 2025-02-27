@@ -1,4 +1,4 @@
-import WeatherIcon from "../../assets/WeatherIcons/ClearSkyDay.svg";
+import ClearSkyDay from "../../assets/WeatherIcons/ClearSkyDay.svg";
 import "../WeatherCard/weatherCard.css";
 import "../../constants/constants.css";
 
@@ -16,7 +16,7 @@ function WeatherCard({ data }: { data: any }) {
       </div>
 
       <div className="weatherIcon">
-        {data.weather === "Sunny" ? <img src={WeatherIcon}></img> : <span />}
+        {data.weather === "Sunny" ? <img src={ClearSkyDay}></img> : <span />}
       </div>
     </div>
   );
