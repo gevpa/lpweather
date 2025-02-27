@@ -72,9 +72,9 @@ const cardMockData = [
 function CardsWrapper() {
   const [cards, setCards] = useState(cardMockData);
 
-  const handleSearch = (newCardData) => {
-    setCards((prevCards) => [newCardData, ...prevCards]);
-  };
+  // const handleSearch = (newCardData) => {
+  //   setCards((prevCards) => [newCardData, ...prevCards]);
+  // };
 
   return (
     <div className="cardsWrapper">
