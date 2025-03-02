@@ -1,0 +1,50 @@
+@import "../../constants/constants.css";
+
+.weatherCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 380px;
+  height: 250px;
+  padding: 40px 26px 40px 40px;
+  border-radius: 8px;
+  font-family: Lato-Regular, sans-serif;
+  background-color: #f9f9f9;
+  margin-top: 80px;
+}
+
+.weatherCard:hover {
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.leftContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.temperature {
+  color: var(--primary-color);
+  font-size: 40px;
+  font-weight: bolder;
+  margin-bottom: 20px;
+}
+
+.weatherIcon {
+  width: 70px;
+  height: 70px;
+}
+
+.weatherState {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333e49;
+}
+
+.city {
+  color: var(--primary-color);
+  font-size: 20px;
+  font-weight: lighter;
+  margin-top: 20px;
+}
