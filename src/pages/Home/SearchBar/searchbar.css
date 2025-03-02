@@ -74,7 +74,7 @@
   background: var(--primary-hover-color);
 }
 
-@media (max-width: 1030px) {
+@media (max-width: 1080px) {
   .backgroundImage {
     height: 200px;
   }
