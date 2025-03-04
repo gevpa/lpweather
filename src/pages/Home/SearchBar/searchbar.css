@@ -74,6 +74,42 @@
   background: var(--primary-hover-color);
 }
 
+@media (max-width: 1080px) {
+  .backgroundImage {
+    height: 200px;
+  }
+
+  .searchContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 80%;
+  }
+
+  .inputContainer {
+    width: 300px;
+    height: 30px;
+  }
+
+  .locationIcon {
+    font-size: 16px;
+  }
+
+  .searchInput {
+    font-size: 14px;
+  }
+
+  .searchButton {
+    font-size: 14px;
+    width: 320px;
+    height: 50px;
+  }
+
+  .searchButton:active {
+    background: var(--primary-onClick-color);
+  }
+}
+
 @media (max-width: 768px) {
   .backgroundImage {
     height: 200px;
