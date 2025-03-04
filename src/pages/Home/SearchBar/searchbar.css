@@ -74,45 +74,6 @@
   background: var(--primary-hover-color);
 }
 
-@media (max-width: 1080px) {
-  .backgroundImage {
-    height: 200px;
-  }
-
-  .searchContainer {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    margin: 20px 20px;
-  }
-
-  .inputContainer {
-    width: 100%;
-    height: 30px;
-  }
-
-  .locationIcon {
-    font-size: 16px;
-  }
-
-  .searchInput {
-    font-size: 14px;
-    padding: 8px;
-  }
-
-  .searchButton {
-    font-size: 14px;
-    padding: 8px 16px;
-    width: 100%;
-    height: 50px;
-  }
-
-  .searchButton:active {
-    background: var(--primary-onClick-color);
-  }
-}
-
 @media (max-width: 768px) {
   .backgroundImage {
     height: 200px;
@@ -123,7 +84,6 @@
     align-items: center;
     gap: 10px;
     width: 80%;
-    margin: 20px 20px;
   }
 
   .inputContainer {
@@ -137,16 +97,12 @@
 
   .searchInput {
     font-size: 14px;
-    padding: 8px;
   }
 
   .searchButton {
     font-size: 14px;
-    padding: 8px 16px;
     width: 320px;
     height: 50px;
-    margin-left: 20px;
-    margin-right: 20px;
   }
 
   .searchButton:active {
@@ -160,7 +116,6 @@
     align-items: center;
     gap: 10px;
     width: 80%;
-    margin: 20 20px;
   }
   .backgroundImage {
     max-height: 400px;
@@ -168,8 +123,6 @@
   .inputContainer {
     width: 300px;
     height: 30px;
-    margin-left: 20px;
-    margin-right: 20px;
   }
 
   .locationIcon {
@@ -178,16 +131,12 @@
 
   .searchInput {
     font-size: 12px;
-    padding: 6px;
   }
 
   .searchButton {
     font-size: 12px;
-    padding: 6px 12px;
     width: 320px;
     height: 50px;
-    margin-left: 20px;
-    margin-right: 20px;
   }
 
   .searchButton:active {
