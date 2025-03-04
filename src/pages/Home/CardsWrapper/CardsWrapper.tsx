@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import WeatherCard from "../../../components/WeatherCard/WeatherCard";
 import "../CardsWrapper/CardsWrapper.css";
 
@@ -72,10 +72,6 @@ const cardMockData = [
 function CardsWrapper() {
   const [cards, setCards] = useState(cardMockData);
 
-  // const handleSearch = (newCardData) => {
-  //   setCards((prevCards) => [newCardData, ...prevCards]);
-  // };
-
   return (
     <div className="cardsWrapper">
       {/* Grid για τις κάρτες */}
@@ -90,14 +86,6 @@ function CardsWrapper() {
       </div>
     </div>
   );
-
-  // return (
-  //   <div style={{ minHeight: "500px" }}>
-  //     {cardMockData.map((cardData) => (
-  //       <WeatherCard data={cardData} />
-  //     ))}
-  //   </div>
-  // );
 }
 
 export default CardsWrapper;
