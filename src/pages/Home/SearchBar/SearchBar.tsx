@@ -6,7 +6,7 @@ import "./searchbar.css";
 function SearchBar({
   handleFoundCity,
 }: {
-  handleFoundCity: (city: string) => void;
+  handleFoundCity: (cityData: any) => void;
 }) {
   const [query, setQuery] = useState("");
 
@@ -14,16 +14,23 @@ function SearchBar({
     setQuery(event.target.value);
   };
 
-  console.log("query", query);
-
   const handleSearch = async () => {
     try {
       const response = await fetch(
         `http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=2b9db91f8d8493f3374df65ee36118ce`,
       );
-      const data = response.json();
-      // handleFoundCity();
-      console.log("data", data);
+      const data = await response.json();
+      if (data.length > 0) {
+        const cityData = {
+          city: data[0].name,
+          country: data[0].country,
+          temperature: "N/A",
+          weather: "Clear sky day",
+          lat: data[0].lat,
+          lon: data[0].lon,
+        };
+        handleFoundCity(cityData);
+      }
     } catch (error) {
       console.log("error", error);
     }

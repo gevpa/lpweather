@@ -13,75 +13,48 @@ import Thunderstorm from "../../assets/WeatherIcons/Thunderstorm.svg";
 import "../WeatherCard/weatherCard.css";
 import "../../constants/constants.css";
 
-function WeatherCard({ data }: { data: any }) {
+const weatherIcons: { [key: string]: string } = {
+  "Broken clouds": BrokenClouds,
+  "Clear sky day": ClearSkyDay,
+  "Clear sky night": ClearSkyNight,
+  "Few clouds day": FewCloudsDay,
+  "Few clouds night": FewCloudsNight,
+  "Mist ": Mist,
+  "Rain day": RainDay,
+  "Rain night": RainNight,
+  "Shower rain": ShowerRain,
+  "Snow ": Snow,
+  "Scattered clouds": ScatteredClouds,
+  "Thunderstorm ": Thunderstorm,
+};
+
+interface WeatherCardProps {
+  data: {
+    city: string;
+    country: string;
+    temperature: string;
+    weather: string;
+    lat: number;
+    lon: number;
+  };
+  isRecent: boolean;
+}
+
+function WeatherCard({ data, isRecent }: WeatherCardProps) {
+  const weatherIcon = weatherIcons[data.weather] || null;
+
   return (
-    <div className="weatherCard">
+    <div className={`weatherCard ${isRecent ? "recent" : ""}`}>
       <div className="leftContent">
         <div className="temperature">{data.temperature}</div>
-        <div className="weatherState">
-          {data.weather === "Broken clouds" ? data.weather : <span />}
-          {data.weather === "Clear sky day" ? data.weather : <span />}
-          {data.weather === "Clear sky night" ? data.weather : <span />}
-          {data.weather === "Few clouds day" ? data.weather : <span />}
-          {data.weather === "Few clouds night" ? data.weather : <span />}
-          {data.weather === "Mist" ? data.weather : <span />}
-          {data.weather === "Rain day" ? data.weather : <span />}
-          {data.weather === "Rain night" ? data.weather : <span />}
-          {data.weather === "Shower rain" ? data.weather : <span />}
-          {data.weather === "Snow" ? data.weather : <span />}
-          {data.weather === "Scattered clouds" ? data.weather : <span />}
-          {data.weather === "Thunderstorm" ? data.weather : <span />}
-        </div>
+        <div className="weatherState">{data.weather}</div>
         <div className="city">
           {data.city}, {data.country}
         </div>
       </div>
 
       <div className="weatherIcon">
-        {data.weather === "Broken clouds" ? (
-          <img src={BrokenClouds}></img>
-        ) : (
-          <span />
-        )}
-        {data.weather === "Clear sky day" ? (
-          <img src={ClearSkyDay}></img>
-        ) : (
-          <span />
-        )}
-        {data.weather === "Clear sky night" ? (
-          <img src={ClearSkyNight}></img>
-        ) : (
-          <span />
-        )}
-        {data.weather === "Few clouds day" ? (
-          <img src={FewCloudsDay}></img>
-        ) : (
-          <span />
-        )}
-        {data.weather === "Few clouds night" ? (
-          <img src={FewCloudsNight}></img>
-        ) : (
-          <span />
-        )}
-        {data.weather === "Mist" ? <img src={Mist}></img> : <span />}
-        {data.weather === "Rain day" ? <img src={RainDay}></img> : <span />}
-        {data.weather === "Rain night" ? <img src={RainNight}></img> : <span />}
-        {data.weather === "Shower rain" ? (
-          <img src={ShowerRain}></img>
-        ) : (
-          <span />
-        )}
-        {data.weather === "Snow" ? <img src={Snow}></img> : <span />}
-        {data.weather === "Scattered clouds" ? (
-          <img src={ScatteredClouds}></img>
-        ) : (
-          <span />
-        )}
-        {data.weather === "Thunderstorm" ? (
-          <img src={Thunderstorm}></img>
-        ) : (
-          <span />
-        )}
+        {weatherIcon && <img src={weatherIcon} alt={data.weather} />}
       </div>
     </div>
   );
