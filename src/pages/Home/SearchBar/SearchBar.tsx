@@ -24,8 +24,8 @@ function SearchBar({
         const cityData = {
           city: data[0].name,
           country: data[0].country,
-          temperature: "N/A",
-          weather: "Clear sky day",
+          temperature: "N/A", //`${weatherData.main.temp}°C`,
+          weather: "Clear sky day", //weatherData.weather[0].description,
           lat: data[0].lat,
           lon: data[0].lon,
         };
