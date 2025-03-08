@@ -38,6 +38,7 @@ function SearchBar({
           weather: weatherData.weather[0].description,
           lat: locationData[0].lat,
           lon: locationData[0].lon,
+          icon: weatherData.weather[0].icon,
         };
         handleFoundCity(cityAndWeatherData);
       }

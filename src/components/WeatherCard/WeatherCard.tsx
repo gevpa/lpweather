@@ -34,6 +34,7 @@ interface WeatherCardProps {
     country: string;
     temperature: string;
     weather: string;
+    icon: string;
     lat: number;
     lon: number;
   };
@@ -42,13 +43,16 @@ interface WeatherCardProps {
 
 function WeatherCard({ data, isRecent }: WeatherCardProps) {
   const weatherIcon =
-    weatherIcons[data.weather as keyof typeof weatherIcons] || null;
+    weatherIcons[data.icon as keyof typeof weatherIcons] || null;
 
   return (
     <div className={`weatherCard ${isRecent ? "recent" : ""}`}>
       <div className="leftContent">
         <div className="temperature">{data.temperature}</div>
-        <div className="weatherState">{data.weather}</div>
+        <div className="weatherState">
+          {data.weather.charAt(0).toUpperCase() +
+            data.weather.slice(1).toLowerCase()}
+        </div>
         <div className="city">
           {data.city}, {data.country}
         </div>
