@@ -7,6 +7,7 @@ interface CardsWrapperProps {
     country: string;
     temperature: string;
     weather: string;
+    icon: string;
     lat: number;
     lon: number;
   }>;
