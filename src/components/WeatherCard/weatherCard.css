@@ -10,7 +10,6 @@
   border-radius: 8px;
   font-family: Lato-Regular, sans-serif;
   background-color: #f9f9f9;
-  margin-top: 80px;
 }
 
 .weatherCard:hover {
@@ -45,6 +44,13 @@
 .city {
   color: var(--primary-color);
   font-size: 20px;
-  font-weight: lighter;
+  font-weight: normal;
   margin-top: 20px;
+}
+
+.coordinates {
+  color: #333e49;
+  font-size: 16px;
+  font-weight: lighter;
+  margin-top: 15px;
 }

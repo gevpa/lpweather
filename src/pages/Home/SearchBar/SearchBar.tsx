@@ -6,7 +6,7 @@ import "./searchbar.css";
 function SearchBar({
   handleFoundCity,
 }: {
-  handleFoundCity: (city: string) => void;
+  handleFoundCity: (cityData: any) => void;
 }) {
   const [query, setQuery] = useState("");
 
@@ -14,16 +14,34 @@ function SearchBar({
     setQuery(event.target.value);
   };
 
-  console.log("query", query);
-
   const handleSearch = async () => {
     try {
-      const response = await fetch(
+      const locationData = await fetch(
         `http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=2b9db91f8d8493f3374df65ee36118ce`,
-      );
-      const data = response.json();
-      // handleFoundCity();
-      console.log("data", data);
+      ).then((response) => response.json());
+
+      //If there are no results, return
+      if (locationData.length === 0) {
+        return;
+      }
+
+      const foundLocation = locationData[0];
+      const weatherData = await fetch(
+        `http://api.openweathermap.org/data/2.5/weather?lat=${foundLocation.lat}&lon=${foundLocation.lon}&appid=2b9db91f8d8493f3374df65ee36118ce&units=metric`,
+      ).then((response) => response.json());
+      console.log("weatherData", weatherData);
+      if (locationData.length > 0) {
+        const cityAndWeatherData = {
+          city: locationData[0].name,
+          country: locationData[0].country,
+          temperature: `${Math.round(weatherData.main.temp)}°C`,
+          weather: weatherData.weather[0].description,
+          lat: locationData[0].lat,
+          lon: locationData[0].lon,
+          icon: weatherData.weather[0].icon,
+        };
+        handleFoundCity(cityAndWeatherData);
+      }
     } catch (error) {
       console.log("error", error);
     }
