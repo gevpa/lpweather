@@ -14,18 +14,18 @@ import "../WeatherCard/weatherCard.css";
 import "../../constants/constants.css";
 
 const weatherIcons: { [key: string]: string } = {
-  "Broken clouds": BrokenClouds,
-  "Clear sky day": ClearSkyDay,
-  "Clear sky night": ClearSkyNight,
-  "Few clouds day": FewCloudsDay,
-  "Few clouds night": FewCloudsNight,
-  "Mist ": Mist,
-  "Rain day": RainDay,
-  "Rain night": RainNight,
-  "Shower rain": ShowerRain,
-  "Snow ": Snow,
-  "Scattered clouds": ScatteredClouds,
-  "Thunderstorm ": Thunderstorm,
+  "clear sky": ClearSkyDay,
+  "clear sky night": ClearSkyNight,
+  "few clouds": FewCloudsDay,
+  "few clouds night": FewCloudsNight,
+  "scattered clouds": ScatteredClouds,
+  "broken clouds": BrokenClouds,
+  "shower rain": ShowerRain,
+  rain: RainDay,
+  "rain night": RainNight,
+  thunderstorm: Thunderstorm,
+  snow: Snow,
+  mist: Mist,
 };
 
 interface WeatherCardProps {
@@ -41,7 +41,8 @@ interface WeatherCardProps {
 }
 
 function WeatherCard({ data, isRecent }: WeatherCardProps) {
-  const weatherIcon = weatherIcons[data.weather] || null;
+  const weatherIcon =
+    weatherIcons[data.weather as keyof typeof weatherIcons] || null;
 
   return (
     <div className={`weatherCard ${isRecent ? "recent" : ""}`}>
@@ -50,6 +51,9 @@ function WeatherCard({ data, isRecent }: WeatherCardProps) {
         <div className="weatherState">{data.weather}</div>
         <div className="city">
           {data.city}, {data.country}
+        </div>
+        <div className="coordinates">
+          Lat: {data.lat.toFixed(2)}, Lon: {data.lon.toFixed(2)}
         </div>
       </div>
 

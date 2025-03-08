@@ -34,7 +34,7 @@ function SearchBar({
         const cityAndWeatherData = {
           city: locationData[0].name,
           country: locationData[0].country,
-          temperature: weatherData.main.temp,
+          temperature: `${Math.round(weatherData.main.temp)}°C`,
           weather: weatherData.weather[0].description,
           lat: locationData[0].lat,
           lon: locationData[0].lon,
