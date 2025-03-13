@@ -10,6 +10,7 @@ interface CityData {
   country: string;
   temperature: string;
   weather: string;
+  icon: string;
   lat: number;
   lon: number;
 }
@@ -18,7 +19,7 @@ function App() {
   const [cards, setCards] = useState<CityData[]>([]);
 
   const handleFoundCity = (cityData: CityData) => {
-    setCards((prevCards) => [cityData, ...prevCards]);
+    setCards((prevCards) => [...prevCards, cityData]);
   };
 
   return (

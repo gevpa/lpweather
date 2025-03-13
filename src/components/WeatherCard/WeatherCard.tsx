@@ -13,56 +13,71 @@ import Thunderstorm from "../../assets/WeatherIcons/Thunderstorm.svg";
 import "../WeatherCard/weatherCard.css";
 import "../../constants/constants.css";
 
-const weatherIcons: { [key: string]: string } = {
-  "clear sky": ClearSkyDay,
-  "clear sky night": ClearSkyNight,
-  "few clouds": FewCloudsDay,
-  "few clouds night": FewCloudsNight,
-  "scattered clouds": ScatteredClouds,
-  "broken clouds": BrokenClouds,
-  "shower rain": ShowerRain,
-  rain: RainDay,
-  "rain night": RainNight,
-  thunderstorm: Thunderstorm,
-  snow: Snow,
-  mist: Mist,
+export type WeatherCardProps = {
+  city: string;
+  country: string;
+  temperature: string;
+  weather: string;
+  icon: string;
+  lat: number;
+  lon: number;
 };
 
-interface WeatherCardProps {
-  data: {
-    city: string;
-    country: string;
-    temperature: string;
-    weather: string;
-    icon: string;
-    lat: number;
-    lon: number;
-  };
-  isRecent: boolean;
+function getWeatherIcon(icon: string): string {
+  switch (icon) {
+    case "01d":
+      return ClearSkyDay;
+    case "01n":
+      return ClearSkyNight;
+    case "02d":
+      return FewCloudsDay;
+    case "02n":
+      return FewCloudsNight;
+    case "03d":
+    case "03n":
+      return ScatteredClouds;
+    case "04d":
+    case "04n":
+      return BrokenClouds;
+    case "09d":
+    case "09n":
+      return ShowerRain;
+    case "10d":
+      return RainDay;
+    case "10n":
+      return RainNight;
+    case "11d":
+    case "11n":
+      return Thunderstorm;
+    case "13d":
+    case "13n":
+      return Snow;
+    default:
+      return Mist;
+  }
 }
 
-function WeatherCard({ data, isRecent }: WeatherCardProps) {
-  const weatherIcon =
-    weatherIcons[data.icon as keyof typeof weatherIcons] || null;
+function WeatherCard({ card }: { card: WeatherCardProps }) {
+  const weatherIcon = getWeatherIcon(card.icon);
 
   return (
-    <div className={`weatherCard ${isRecent ? "recent" : ""}`}>
+    <div className="weatherCard">
       <div className="leftContent">
-        <div className="temperature">{data.temperature}</div>
+        <div className="temperature">{card.temperature}</div>
         <div className="weatherState">
-          {data.weather.charAt(0).toUpperCase() +
-            data.weather.slice(1).toLowerCase()}
+          {card.weather.charAt(0).toUpperCase() +
+            card.weather.slice(1).toLowerCase()}
         </div>
         <div className="city">
-          {data.city}, {data.country}
+          {card.city}, {card.country}
         </div>
         <div className="coordinates">
-          Lat: {data.lat.toFixed(2)}, Lon: {data.lon.toFixed(2)}
+          Lat: {card.lat.toFixed(2)}, Lon: {card.lon.toFixed(2)}
         </div>
       </div>
 
       <div className="weatherIcon">
-        {weatherIcon && <img src={weatherIcon} alt={data.weather} />}
+        {weatherIcon && <img src={weatherIcon} alt={card.weather} />}
       </div>
     </div>
   );

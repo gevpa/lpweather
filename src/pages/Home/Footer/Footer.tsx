@@ -4,7 +4,7 @@ function Footer() {
   return (
     <div className="footer-container">
       <div className="footer-text">
-        <p>&copy; Workable Technology Limited 2024</p>
+        <p>&copy; G. Ev. Panagopoulou 2025</p>
       </div>
     </div>
   );

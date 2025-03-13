@@ -41,6 +41,7 @@ function SearchBar({
           icon: weatherData.weather[0].icon,
         };
         handleFoundCity(cityAndWeatherData);
+        setQuery("");
       }
     } catch (error) {
       console.log("error", error);
