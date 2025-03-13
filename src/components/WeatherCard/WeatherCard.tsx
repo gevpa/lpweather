@@ -14,18 +14,24 @@ import "../WeatherCard/weatherCard.css";
 import "../../constants/constants.css";
 
 const weatherIcons: { [key: string]: string } = {
-  "clear sky": ClearSkyDay,
-  "clear sky night": ClearSkyNight,
-  "few clouds": FewCloudsDay,
-  "few clouds night": FewCloudsNight,
-  "scattered clouds": ScatteredClouds,
-  "broken clouds": BrokenClouds,
-  "shower rain": ShowerRain,
-  rain: RainDay,
-  "rain night": RainNight,
-  thunderstorm: Thunderstorm,
-  snow: Snow,
-  mist: Mist,
+  "01d": ClearSkyDay, // Clear sky (day)
+  "01n": ClearSkyNight, // Clear sky (night)
+  "02d": FewCloudsDay, // Few clouds (day)
+  "02n": FewCloudsNight, // Few clouds (night)
+  "03d": ScatteredClouds, // Scattered clouds
+  "03n": ScatteredClouds, // Scattered clouds
+  "04d": BrokenClouds, // Broken/Overcast clouds
+  "04n": BrokenClouds, // Broken/Overcast clouds
+  "09d": ShowerRain, // Shower rain
+  "09n": ShowerRain, // Shower rain
+  "10d": RainDay, // Rain (day)
+  "10n": RainNight, // Rain (night)
+  "11d": Thunderstorm, // Thunderstorm
+  "11n": Thunderstorm, // Thunderstorm
+  "13d": Snow, // Snow
+  "13n": Snow, // Snow
+  "50d": Mist, // Mist/Fog/Haze
+  "50n": Mist, // Mist/Fog/Haze
 };
 
 interface WeatherCardProps {
