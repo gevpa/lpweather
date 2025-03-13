@@ -19,7 +19,7 @@ function App() {
   const [cards, setCards] = useState<CityData[]>([]);
 
   const handleFoundCity = (cityData: CityData) => {
-    setCards((prevCards) => [cityData, ...prevCards]);
+    setCards((prevCards) => [...prevCards, cityData]);
   };
 
   return (
