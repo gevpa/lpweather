@@ -18,3 +18,11 @@
   padding: 20px 20px;
   width: 100%;
 }
+
+@media (max-width: 768px) {
+  .weatherCard {
+    width: 300px;
+    height: 200px;
+    margin-left: 40px;
+  }
+}
