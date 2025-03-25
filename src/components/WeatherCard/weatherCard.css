@@ -5,16 +5,25 @@
   justify-content: space-between;
   align-items: center;
   width: 380px;
-  height: 250px;
-  padding: 40px 26px 40px 40px;
+  height: 240px;
+  box-sizing: border-box;
+  padding: 32px 26px 32px 32px;
   border-radius: 8px;
   font-family: Lato-Regular, sans-serif;
   background-color: #f9f9f9;
+
+  @media (max-width: 768px) {
+    width: 320px;
+  }
 }
 
 .weatherCard:hover {
   background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 -4px 8px rgba(0, 0, 0, 0.1),
+    -4px 0 8px rgba(0, 0, 0, 0.1),
+    4px 0 8px rgba(0, 0, 0, 0.1);
 }
 
 .leftContent {
