@@ -3,26 +3,23 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 120px;
-  overflow: hidden;
   margin: 80px 0;
 }
 
 .cardsContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   gap: 40px;
-  margin-bottom: 40px;
-  padding: 20px 20px;
+  max-width: calc(3 * 380px + 2 * 40px);
   width: 100%;
 }
 
 @media (max-width: 768px) {
-  .weatherCard {
-    width: 300px;
-    height: 200px;
-    margin-left: 40px;
+  .cardsContainer {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 8px;
   }
 }
